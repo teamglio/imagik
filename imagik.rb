@@ -51,7 +51,7 @@ post '/feedback' do
 	  :to => 'emile@silvis.co.za',
 	  :body_text => params['feedback'] + ' - ' + Mxit.new(request.env).user_id
 	  )
-	erb "Thanks!" 
+	erb "Thanks! <a href='/'>Back</a>" 
 end
 
 get '/stats' do
