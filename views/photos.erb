@@ -4,16 +4,16 @@
 	<% user_url = FlickRaw.url_profile(photo) %>
 	<% username = flickr.urls.lookupUser(:url => user_url)['username'] %>
 	<li><img src='<%= FlickRaw.url_n(photo) %>' width='300px'></li>
-	by <a href='<%= user_url %>' onclick="window.open(this.href)"><%= username %></a>
+	by <!--<a href='<% =begin %><%= user_url %><% =end %>' onclick="window.open(this.href)">--><%= username %></a>
 <% end %>
 <br />
 </ul>
 <br />
 <div>
 	<% unless params[:page] == '1' %>
-		<< <a href="/show/<%= (params[:page].to_i - 1) %>">Back</a> |
+		&lt;&lt; <a href="/show/<%= (params[:page].to_i - 1) %>">Back</a> |
 	<% end %>
 	<% unless params[:page] == @photos.pages.to_s %>
-		<a href="/show/<%= (params[:page].to_i + 1) %>">Next</a> >>
+		<a href="/show/<%= (params[:page].to_i + 1) %>">Next</a> &gt;&gt;
 	<% end %>
 </div>
