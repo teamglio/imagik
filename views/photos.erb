@@ -4,7 +4,7 @@
 	<% user_url = FlickRaw.url_profile(photo) %>
 	<% username = flickr.urls.lookupUser(:url => user_url)['username'] %>
 	<li><img src='<%= FlickRaw.url_n(photo) %>' width='300px'></li>
-	by <!--<a href='<% =begin %><%= user_url %><% =end %>' onclick="window.open(this.href)">--><%= username %></a>
+	by <!--<a href='<%= user_url %>' onclick="window.open(this.href)">--><%= username %></a>
 <% end %>
 <br />
 </ul>
