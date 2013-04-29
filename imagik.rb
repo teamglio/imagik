@@ -31,7 +31,7 @@ post '/search' do
 end
 
 get '/show/:page' do
-	@photos = flickr.photos.search(:tags => session[:search], :license => 4, :content_type => 1, :safe_search => 2, :per_page => 3, :page => params[:page])
+	@photos = flickr.photos.search(:tags => session[:search], :license => 4, :content_type => 1, :safe_search => 1, :per_page => 3, :page => params[:page])
 	erb :photos
 end
 
