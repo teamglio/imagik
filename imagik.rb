@@ -47,8 +47,8 @@ post '/feedback' do
 	ses = AWS::SimpleEmailService.new
 	ses.send_email(
 	  :subject => 'Imagik feedback',
-	  :from => 'emile@silvis.co.za',
-	  :to => 'emile@silvis.co.za',
+	  :from => 'mxitappfeedback@glio.co.za',
+	  :to => 'mxitappfeedback@glio.co.za',
 	  :body_text => params['feedback'] + ' - ' + Mxit.new(request.env).user_id
 	  )
 	erb "Thanks! <a href='/'>Back</a>" 
