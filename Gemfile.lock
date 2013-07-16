@@ -16,12 +16,11 @@ GEM
     flickraw (0.9.6)
     json (1.7.7)
     mime-types (1.22)
+    nestful (1.0.4)
     nokogiri (1.5.9)
     rack (1.5.2)
     rack-protection (1.5.0)
       rack
-    rest-client (1.6.7)
-      mime-types (>= 1.16)
     sinatra (1.4.2)
       rack (~> 1.5, >= 1.5.2)
       rack-protection (~> 1.4)
@@ -39,5 +38,5 @@ DEPENDENCIES
   dotenv
   firebase
   flickraw
-  rest-client
+  nestful
   sinatra
