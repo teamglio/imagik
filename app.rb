@@ -1,7 +1,6 @@
 require 'sinatra'
 require 'aws-sdk'
 require 'flickraw'
-require 'rest-client'
 require 'dotenv'
 require 'firebase'
 require 'nestful'
