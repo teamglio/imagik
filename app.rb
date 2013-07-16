@@ -9,7 +9,7 @@ require_relative 'lib/imagik.rb'
 enable :sessions
 
 configure do
-	Dotenv.load if settings.development?
+	#Dotenv.load if settings.development?
 	Firebase.base_uri = "https://glio-mxit-users.firebaseio.com/#{ENV['MXIT_APP_NAME']}/"
 	FlickRaw.api_key = ENV['FLICKR_KEY']
 	FlickRaw.shared_secret = ENV['FLICKR_SECRET']
