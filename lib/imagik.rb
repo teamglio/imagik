@@ -1,0 +1,1 @@
+require_relative 'imagik/mxit_user.rb'

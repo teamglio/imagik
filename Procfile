@@ -1,1 +1,1 @@
-web: ruby imagik.rb -e "production" -p $PORT
+web: ruby app.rb -e "production" -p $PORT
