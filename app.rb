@@ -4,6 +4,7 @@ require 'flickraw'
 require 'dotenv'
 require 'firebase'
 require 'nestful'
+require 'stathat'
 require_relative 'lib/imagik.rb'
 
 enable :sessions
@@ -30,6 +31,7 @@ end
 
 post '/search' do
 	session[:search] = params[:search]
+	StatHat::API.ez_post_count('imagik - images searched', 'emile@silvis.co.za', 1)		
 	redirect to 'show/1'
 end
 
