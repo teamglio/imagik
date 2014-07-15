@@ -2,16 +2,13 @@ require 'sinatra'
 require 'aws-sdk'
 require 'flickraw'
 require 'dotenv'
-require 'firebase'
 require 'nestful'
-require 'stathat'
 require_relative 'lib/imagik.rb'
 
 enable :sessions
 
 configure do
 	#Dotenv.load if settings.development?
-	Firebase.base_uri = "https://glio-mxit-users.firebaseio.com/#{ENV['MXIT_APP_NAME']}/"
 	FlickRaw.api_key = ENV['FLICKR_KEY']
 	FlickRaw.shared_secret = ENV['FLICKR_SECRET']
 	AWS.config(
@@ -25,13 +22,12 @@ before do
 end
 
 get '/' do
-	create_user unless get_user
+	#create_user unless get_user
 	erb :search
 end
 
 post '/search' do
-	session[:search] = params[:search]
-	StatHat::API.ez_post_count('imagik - images searched', 'emile@silvis.co.za', 1)		
+	session[:search] = params[:search]	
 	redirect to 'show/1'
 end
 
